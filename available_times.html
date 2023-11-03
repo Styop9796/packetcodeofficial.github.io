@@ -1,0 +1,95 @@
+{% extends 'base_temp.html' %}
+
+{% block content %}
+          {% load static %}
+<div class="some">
+        <div class="buttons">
+
+            <form id="bookingForm" method="POST" style="display:none;">
+                {% csrf_token %}
+                <input type="text" name="time" id="bookingTime">
+            </form>
+
+            <p class="selected-date" style="color: black">Selected date: {{ data.year }}/{{ data.month }}/{{ data.date }}</p>
+
+
+            {% for field in form %}
+            <a class="button" onclick="sendPostRequest(this)">{{field}}</a>
+            {% endfor %}
+
+
+
+
+        </div>
+</div>
+
+
+        <div class="choosetimebtndiv">
+            <button class="choosetimebtn">Book Now</button>
+        </div>
+
+<style>
+
+
+    .selected-date{
+        background: transparent;
+
+            }
+    .choosetimebtndiv {
+            text-align: center;
+            margin-top: 10px;
+
+        }
+
+
+     .choosetimebtn {
+            font-size: 30px;
+            padding: 15px 30px;
+            border-radius: 40px;
+            outline: none;
+            justify-content: flex-end;
+            background: black;
+            color: white;
+
+
+        }
+
+    .some{
+       padding: 40px;
+    }
+    .buttons{
+
+        width: 80%;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        cursor: pointer;
+        text-align: center;
+
+    }
+
+
+
+
+     body{
+        background: url("{% static 'images/bgbg.png' %}") ;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+</style>
+
+<script>
+function sendPostRequest(button) {
+    const buttonText = button.textContent;
+    document.getElementById("bookingTime").value = buttonText;
+    document.getElementById("bookingForm").submit();
+    console.log(buttonText);
+
+}
+
+</script>
+
+
+
+{% endblock %}

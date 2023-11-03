@@ -1,0 +1,74 @@
+{% extends 'base_temp.html' %}
+
+{% block content %}
+     {% load static %}
+
+
+
+<div class="user_info_input" style=" display: inline-block;">
+    <h1 style="text-align: center">Personal Inforamtion</h1>
+
+        <div class="container_input">
+            <input class='input_design' type="text" id="firstName" name="firstName" placeholder="Enter your name">
+            <input class='input_design' type="text" id="email" name="firstName" placeholder="Enter your email">
+            <input class='input_design' type="text" id="phone" name="firstName" placeholder="Enter your phone">
+            <input class='input_design' type="text" id="comments" name="firstName" placeholder="Special instructions">
+        </div>
+</div>
+
+
+<style>
+
+
+
+
+
+    .container_input{
+        cursor: pointer;
+        text-align: center;
+        padding: 10px;
+        width: 30%;
+        display: block;
+        margin-right: auto;
+  margin-left: auto;
+    }
+
+
+    .input_design{
+        display:inline-block;
+        background: white;
+        padding: 10px;
+        margin:10px;
+        border-radius: 10px;
+    }
+
+
+
+
+
+    body{
+        background: white;
+    }
+
+    .user_info_input{
+        margin-top: 20px;
+        display: flex;
+        justify-content: flex-start;
+  }
+
+@media screen and (max-width: 1200px){
+
+ body{
+         background: url("{% static 'images/bgbg.png' %}") ;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+
+
+}
+
+</style>
+
+{% endblock %}

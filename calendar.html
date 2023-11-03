@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+          {% load static %}
+
+    <meta charset="utf-8">
+    <title>Booking</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Font Link for Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <script src="{% static 'js/script.js' %}" defer></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <p class="current-date"></p>
+        <div class="icons">
+          <span id="prev" class="material-symbols-rounded">chevron_left</span>
+          <span id="next" class="material-symbols-rounded">chevron_right</span>
+        </div>
+      </header>
+      <div class="calendar">
+        <ul class="weeks">
+          <li>Sun</li>
+          <li>Mon</li>
+          <li>Tue</li>
+          <li>Wed</li>
+          <li>Thu</li>
+          <li>Fri</li>
+          <li>Sat</li>
+        </ul>
+
+          <ul id ="date_selector" class="days" ></ul>
+
+        <form id="bookingForm" method="POST" style="display:none;">  {% csrf_token %}
+
+          <input type="text" name="date" id="bookingDate">
+            <input type="text" name="month" id="bookingMonth">
+           <input type="text" name="year" id="bookingYear">
+           <input type="text" name="time" id="bookingTime">
+             <input type="submit"   value="Book">
+        </form>
+
+
+      </div>
+    </div>
+
+
+
+
+    <style>
+
+
+
+ body{
+        background: url("{% static 'images/bgbg.png' %}") ;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+
+
+    </style>
+<script>
+  document.querySelector(".days").addEventListener("click", function(event) {
+    const selectedDate = event.target.textContent;
+    const selectedMonth = currMonth + 1;
+    const selectedYear = currYear;
+
+    console.log("Date:", selectedDate);
+    console.log("Month:", selectedMonth);
+    console.log("Year:", selectedYear);
+
+    document.getElementById("bookingDate").value = selectedDate;
+    document.getElementById("bookingMonth").value = selectedMonth;
+    document.getElementById("bookingYear").value = selectedYear;
+
+    document.getElementById("bookingForm").submit();
+  });
+
+
+</script>
+
+  </body>
+</html>

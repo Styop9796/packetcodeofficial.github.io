@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+     {% load static %}
     <meta charset="UTF-8">
     <title>Booking</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="js.js" ></script>
+    <script src="js.js"></script>
 
 </head>
 <body >
@@ -20,28 +21,33 @@
 
     <div class="shadow-container" style="color: whitesmoke" data-service-name="Haircut" data-price="100" onclick="openPopup();toggleService(this)">
         <p class="text-shadow" >Haircut</p>
-        <p class="parag" >$100</p>
+        <p class="parag">30min</p>
+        <p class="parag">Price:$100</p>
     </div>
 
-    <div class="shadow-container" style="color: whitesmoke" data-service-name="Haircut" data-price="1555" onclick="openPopup();toggleService(this)" >
-        <p class="text-shadow" >Haircut</p>
-        <p class="parag" >$220</p>
+    <div class="shadow-container" style="color: whitesmoke" data-service-name="Beard" data-price="220" onclick="openPopup();toggleService(this)" >
+        <p class="text-shadow" >Beard</p>
+        <p class="parag">30min</p>
+        <p class="parag">Price:$220</p>
     </div>
-    <div class="shadow-container" style="color: whitesmoke" data-service-name="Haircut" data-price="330" onclick="openPopup();toggleService(this)">
-        <p class="text-shadow" >Haircut</p>
-        <p class="parag" >$330</p>
+    <div class="shadow-container" style="color: whitesmoke" data-service-name="Mens Color" data-price="330" onclick="openPopup();toggleService(this)">
+        <p class="text-shadow" >Mens Color</p>
+        <p class="parag">30min</p>
+        <p class="parag">Price:$330</p>
     </div>
-    <div class="shadow-container" style="color: whitesmoke" data-service-name="Haircut" data-price="445" onclick="openPopup();toggleService(this)">
-        <p class="text-shadow" >Haircut</p>
-        <p class="parag" >$445</p>
+    <div class="shadow-container" style="color: whitesmoke" data-service-name="Shave Head" data-price="445" onclick="openPopup();toggleService(this)">
+        <p class="text-shadow" >Shave Head</p>
+        <p class="parag">30min</p>
+        <p class="parag">Price:$445</p>
     </div>
-        <div class="shadow-container" style="color: whitesmoke" data-service-name="Haircut" data-price="555" onclick="openPopup();toggleService(this)">
-        <p class="text-shadow" >Haircut</p>
-            <p class="parag">$500</p>
+        <div class="shadow-container" style="color: whitesmoke" data-service-name="Shave Beard" data-price="500" onclick="openPopup();toggleService(this)">
+        <p class="text-shadow" >Shave Beard</p>
+            <p class="parag">30min</p>
+            <p class="parag">Price:$500</p>
     </div>
-        <div class="shadow-container" style="color: whitesmoke" data-service-name="Haircut" data-price="29" onclick="openPopup();toggleService(this);">
-        <p class="text-shadow" >Haircut</p>
-            <p class="parag">30min.</p>
+        <div class="shadow-container" style="color: whitesmoke" data-service-name="XerasimaNagasaki" data-price="29" onclick="openPopup();toggleService(this);">
+        <p class="text-shadow" >XerasimaNagasaki</p>
+            <p class="parag">30min</p>
             <p class="parag">Price:$29</p>
     </div>
 
@@ -174,7 +180,7 @@
         overflow-y: auto;
     }
      .text-shadow {
-         opacity: 1;
+
          font-family: FreeMono, monospace	;
          font-weight: bolder;
          color: black;
@@ -186,8 +192,8 @@
     .shadow-container {
           width: 15%;
           background: white;
-          opacity: 0.5;
-          padding: 20px;
+          opacity: 0.8;
+          padding: 1px;
           margin-left: 3%;
           margin-top: 5%;
           border-radius: 15px;
@@ -203,7 +209,7 @@
             top: 80%;
 }
         body{
-         background: url('bgbg.png') ;
+         background: url("bgbg.png") ;
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
@@ -219,12 +225,12 @@
         }
 
         .text-shadow{
-            margin:0 ;
+            margin-top: -5px;
             font-size: 50px;
         }
 
         .parag {
-            margin:0;
+            margin-top:-35px;
             font-size: 35px;
         }
     }

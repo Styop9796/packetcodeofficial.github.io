@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-     {% load static %}
     <meta charset="UTF-8">
     <title>Booking</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="js.js"></script>
+    <script src="js.js" ></script>
 
 </head>
 <body >
 <div class="maindiv">
 <div class="headertext" style="text-align:center;">
 
-    <h1 STYLE="color: white;font-size: 60px; ">Choose Service</h1>
+    <h1  STYLE="font-size: 60px; ">Choose Service</h1>
 
 </div>
 
@@ -56,8 +55,8 @@
 
 <div class="popup" id="popupid">
 
-    <div id="selectedServices" class="service-name" style="font-size: 30px"></div>
-    <div id="totalPrice" class="total-price" style="font-size: 35px"></div>
+    <div id="selectedServices" class="service-name" style="font-size: 40px"></div>
+    <div id="totalPrice" class="total-price" style="font-size: 30px"></div>
     <div class="choosetimebtndiv">
         <button class="choosetimebtn">Choose a time</button>
     </div>
@@ -81,12 +80,14 @@
 <style>
 
 
+
+
         .popup{
             opacity: 0.7;
             margin-top: 20px;
             width: 100%;
             height: 19vh;    ;
-            background: gray;
+            background: white ;
             border-radius: 20px;
             text-align: center;
             padding: 10px 20px 20px 10px;
@@ -114,9 +115,9 @@
             bottom:   50px;
         }
         .choosetimebtn {
-            font-size: 40px;
-            padding: 15px 50px;
-            border-radius: 15px;
+            font-size: 45px;
+            padding: 15px 150px;
+            border-radius: 40px;
             outline: none;
             justify-content: flex-end;
             background: black;
@@ -136,7 +137,7 @@
 .total-price, .service-name {
             margin-top: 20px;
             font-weight: bold;
-            color: white;
+            color: black;
         }
 
 .navbar{
@@ -208,6 +209,12 @@
         position: fixed;
             top: 80%;
 }
+        .headertext h1{
+            color:white;
+        }
+
+
+
         body{
          background: url("bgbg.png") ;
         background-size: cover;
@@ -269,6 +276,7 @@
 
 
 <script>
+
 let popup =document.getElementById('popupid');
 
 

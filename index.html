@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+     {% load static %}
     <meta charset="UTF-8">
     <title>Booking</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="js.js"></script>
+    <script src="'js/scr.js'></script>
 
 </head>
 <body >
 <div class="maindiv">
 <div class="headertext" style="text-align:center;">
 
-    <h1 STYLE="color: white">Choose Service</h1>
+    <h1 STYLE="color: white;font-size: 60px; ">Choose Service</h1>
 
 </div>
 
@@ -50,8 +51,8 @@
 
 <div class="popup" id="popupid">
 
-    <div id="selectedServices" class="service-name"></div>
-    <div id="totalPrice" class="total-price"></div>
+    <div id="selectedServices" class="service-name" style="font-size: 30px"></div>
+    <div id="totalPrice" class="total-price" style="font-size: 35px"></div>
     <div class="choosetimebtndiv">
         <button class="choosetimebtn">Choose a time</button>
     </div>
@@ -80,7 +81,7 @@
             margin-top: 20px;
             width: 100%;
             height: 19vh;    ;
-            background: #1e1e1e;
+            background: gray;
             border-radius: 20px;
             text-align: center;
             padding: 10px 20px 20px 10px;
@@ -108,8 +109,8 @@
             bottom:   50px;
         }
         .choosetimebtn {
-
-            padding: 5px 30px;
+            font-size: 40px;
+            padding: 15px 50px;
             border-radius: 15px;
             outline: none;
             justify-content: flex-end;
@@ -197,7 +198,7 @@
 
     }
 
-    @media screen and (max-width: 2200px){
+    @media screen and (max-width: 1200px){
         .popup{
         position: fixed;
             top: 80%;
@@ -210,6 +211,7 @@
     }
         .headertext{
             margin-top: 60px;
+            font-size: 50px;
         }
 
         .shadow-container{
@@ -218,12 +220,13 @@
         }
 
         .text-shadow{
-            font-size: 30px;
+            margin:0 ;
+            font-size: 50px;
         }
 
         .parag {
             margin:0;
-            font-size: 20px;
+            font-size: 35px;
         }
     }
 

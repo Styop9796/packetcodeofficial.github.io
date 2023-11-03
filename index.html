@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     {% load static %}
+    <meta charset="UTF-8">
+    <title>Booking</title>
+    <link rel="stylesheet" href="{% static 'css/style155.css' %}">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="{% static 'js/scr.js' %}" defer></script>
+
+</head>
+<body >
+<div class="maindiv">
+<div class="headertext" style="text-align:center;">
+
+    <h1 STYLE="color: white">Choose Service</h1>
+
+</div>
+
+<div class="main_container">
+
+    <div class="shadow-container" style="color: whitesmoke" data-service-name="Haircut" data-price="100" onclick="openPopup();toggleService(this)">
+        <p class="text-shadow" >Haircut</p>
+        <p class="parag" >$100</p>
+    </div>
+
+    <div class="shadow-container" style="color: whitesmoke" data-service-name="Haircut" data-price="1555" onclick="openPopup();toggleService(this)" >
+        <p class="text-shadow" >Haircut</p>
+        <p class="parag" >$220</p>
+    </div>
+    <div class="shadow-container" style="color: whitesmoke" data-service-name="Haircut" data-price="330" onclick="openPopup();toggleService(this)">
+        <p class="text-shadow" >Haircut</p>
+        <p class="parag" >$330</p>
+    </div>
+    <div class="shadow-container" style="color: whitesmoke" data-service-name="Haircut" data-price="445" onclick="openPopup();toggleService(this)">
+        <p class="text-shadow" >Haircut</p>
+        <p class="parag" >$445</p>
+    </div>
+        <div class="shadow-container" style="color: whitesmoke" data-service-name="Haircut" data-price="555" onclick="openPopup();toggleService(this)">
+        <p class="text-shadow" >Haircut</p>
+            <p class="parag">$500</p>
+    </div>
+        <div class="shadow-container" style="color: whitesmoke" data-service-name="Haircut" data-price="29" onclick="openPopup();toggleService(this);">
+        <p class="text-shadow" >Haircut</p>
+            <p class="parag">30min.</p>
+            <p class="parag">Price:$29</p>
+    </div>
+
+    </div>
+
+
+<div class="popup" id="popupid">
+
+    <div id="selectedServices" class="service-name"></div>
+    <div id="totalPrice" class="total-price"></div>
+    <div class="choosetimebtndiv">
+        <button class="choosetimebtn">Choose a time</button>
+    </div>
+
+
+</div>
+</div>
+
+    <form id="serviseForm" method="POST" style="display:none;">  {% csrf_token %}
+
+        <input type="text" name="service" id="serviceName">
+        <input type="text" name="price" id="servicePrice">
+    </form>
+
+
+
+
+
+
+
+<style>
+
+
+        .popup{
+            opacity: 0.7;
+            margin-top: 20px;
+            width: 100%;
+            height: 19vh;    ;
+            background: #1e1e1e;
+            border-radius: 20px;
+            text-align: center;
+            padding: 10px 20px 20px 10px;
+            transform: scale(0.1);
+            visibility: hidden;
+            transition: transform 0.4s, top 0.4s ;
+            overflow-y: auto;
+
+        }
+
+        .open-popup{
+            visibility: visible;
+            transform: scale(1);
+
+
+        }
+
+
+
+        .choosetimebtndiv {
+
+
+
+            margin-top: 10px;
+            bottom:   50px;
+        }
+        .choosetimebtn {
+
+            padding: 5px 30px;
+            border-radius: 15px;
+            outline: none;
+            justify-content: flex-end;
+            background: black;
+            color: white;
+
+
+        }
+
+
+
+.collapse{
+    position: absolute;
+    margin-right: 20px;
+}
+
+
+.total-price, .service-name {
+            margin-top: 20px;
+            font-weight: bold;
+            color: white;
+        }
+
+.navbar{
+
+     border-bottom: 1px  solid black;
+
+
+
+}
+
+    .checkout {
+        border: 1px  solid black;
+
+  position: absolute;
+  top: 20%;
+  right: 20px ;
+  border-radius: 30px ;
+  width: 200px; /* Adjust the width as needed */
+  height: 50%; /* Adjust the height as needed */
+  padding: 10px;
+  box-sizing: border-box;
+  overflow-y: auto; /* Add scroll bar if content is too long */
+}
+
+    .parag {
+        font-family: FreeMono, monospace	;
+        color: #1e1e1e;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .main_container{
+        width: 100%;
+        height: 70vh;
+        display: flex;
+        flex-direction: row;
+        margin-top: 10px;
+        column-gap: 10px;
+        justify-content: space-around;
+        flex-flow:wrap;
+        overflow-y: auto;
+    }
+     .text-shadow {
+         opacity: 1;
+         font-family: FreeMono, monospace	;
+         font-weight: bolder;
+         color: black;
+         text-align: center;
+            font-size: 80%;
+        text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+    .shadow-container {
+          width: 15%;
+          background: white;
+          opacity: 0.5;
+          padding: 20px;
+          margin-left: 3%;
+          margin-top: 5%;
+          border-radius: 15px;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+        border: 1px  solid black;
+        box-sizing: border-box;
+
+    }
+
+    @media screen and (max-width: 1200px){
+        .popup{
+        position: fixed;
+            top: 80%;
+}
+        body{
+         background: url("{% static 'images/bgbg.png' %}") ;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+        .headertext{
+            margin-top: 60px;
+        }
+
+        .shadow-container{
+            width: 50%;
+            height: 150px;
+        }
+
+        .text-shadow{
+            font-size: 30px;
+        }
+
+        .parag {
+            margin:0;
+            font-size: 20px;
+        }
+    }
+
+
+
+
+
+
+    .selected {
+    border: 2px solid black;
+        background: black;
+        transition-duration: 0.5s;
+
+
+
+        .text-shadow{
+            color:whitesmoke;
+        }
+        .parag{
+            color:whitesmoke;
+
+        }
+    }
+
+
+
+
+
+
+
+    </style>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+
+<script>
+let popup =document.getElementById('popupid');
+
+
+function openPopup() {
+    popup.classList.add('open-popup');
+}
+
+</script>
+</body>
+</html>
